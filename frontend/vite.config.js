@@ -11,13 +11,5 @@ export default defineConfig({
         changeOrigin: true
       }
     }
-  },
-  // Add this for SPA routing
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks: undefined
-      }
-    }
   }
 })
