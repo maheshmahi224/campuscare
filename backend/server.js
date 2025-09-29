@@ -1,4 +1,4 @@
-import express from 'express';
+﻿import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -10,14 +10,27 @@ dotenv.config();
 
 const app = express();
 
-// Middleware
-app.use(cors());
+// CORS configuration
+const corsOptions = {
+  origin: [
+    'http://localhost:3000',
+    'https://your-frontend-app.vercel.app' // Replace with your Vercel domain
+  ],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/complaints', complaintRoutes);
 app.use('/api/events', eventRoutes);
+
+// Health check route
+app.get('/health', (req, res) => {
+  res.status(200).json({ message: 'Server is healthy' });
+});
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI, {
