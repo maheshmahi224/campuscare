@@ -69,18 +69,19 @@ const StudentDashboard = () => {
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-gray-900">Scient Campus Care</h1>
-              <span className="ml-4 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+          <div className="flex flex-col sm:flex-row justify-between items-center py-3 sm:h-16 gap-2 sm:gap-0">
+            <div className="flex flex-col sm:flex-row items-center gap-2">
+              <h1 className="text-lg sm:text-2xl font-bold text-gray-900">Scient Campus Care</h1>
+              <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm font-medium">
                 Student Portal
               </span>
             </div>
-            <div className="flex items-center space-x-4">
-              <span className="text-gray-700">Welcome, {user?.rollNumber}</span>
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <span className="text-sm sm:text-base text-gray-700 hidden sm:inline">Welcome, {user?.rollNumber}</span>
+              <span className="text-xs text-gray-700 sm:hidden">{user?.rollNumber}</span>
               <button
                 onClick={logout}
-                className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
+                className="bg-gray-600 text-white px-3 py-1.5 sm:px-4 sm:py-2 text-sm rounded-lg hover:bg-gray-700 transition"
               >
                 Logout
               </button>

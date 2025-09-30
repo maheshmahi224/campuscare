@@ -11,6 +11,7 @@ const AdminDashboard = () => {
   const [stats, setStats] = useState({})
   const [showEventForm, setShowEventForm] = useState(false)
   const [editingEvent, setEditingEvent] = useState(null)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [eventForm, setEventForm] = useState({
     title: "",
     date: "",
@@ -99,9 +100,30 @@ const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
+      {/* Mobile Header */}
+      <header className="lg:hidden bg-white shadow-sm border-b px-4 py-3">
+        <div className="flex justify-between items-center">
+          <h1 className="text-lg font-bold text-gray-800">Scient Campus Care</h1>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 rounded-lg hover:bg-gray-100"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {mobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
+      </header>
+
       <div className="flex flex-1">
       {/* Sidebar */}
-      <div className="w-64 bg-white shadow-lg">
+      <div className={`${
+        mobileMenuOpen ? 'fixed inset-0 z-50' : 'hidden'
+      } lg:block lg:relative w-64 bg-white shadow-lg`}>
         <div className="p-6 border-b">
           <h1 className="text-xl font-bold text-gray-800">Scient Campus Care</h1>
           <p className="text-sm text-gray-600">Admin Panel</p>
@@ -114,7 +136,10 @@ const AdminDashboard = () => {
           ].map((item) => (
             <button
               key={item.id}
-              onClick={() => setActiveSection(item.id)}
+              onClick={() => {
+                setActiveSection(item.id)
+                setMobileMenuOpen(false)
+              }}
               className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg mb-2 transition ${
                 activeSection === item.id
                   ? "bg-blue-100 text-blue-700"
