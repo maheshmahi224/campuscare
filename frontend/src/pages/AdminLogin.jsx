@@ -96,9 +96,7 @@ const AdminLogin = () => {
 
           <div className="mt-6 p-4 bg-blue-50 rounded-lg">
             <p className="text-sm text-blue-700 text-center">
-              <strong>Test Credentials:</strong><br />
-              Username: admin@campuscare.com<br />
-              Password: Admin123!
+              <strong> Confidential: Admin Use Only </strong>
             </p>
           </div>
         </div>
