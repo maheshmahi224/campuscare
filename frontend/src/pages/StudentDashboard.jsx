@@ -310,8 +310,8 @@ const StudentDashboard = () => {
               </div>
             </div>
           </div>
-        </div>
-      </main>
+        )}
+      </div>
       <Footer />
     </div>
   )
