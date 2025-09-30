@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center gap-3">
             <img 
-              src="https://i.postimg.cc/PxQN8ryt/vsoft-logo.png" 
+              src="https://www.aksharaedu.in/assets/vsoft-logo.png" 
               alt="V Soft Logo" 
               className="h-8 w-8"
             />
