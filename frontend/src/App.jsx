@@ -1,21 +1,21 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './context/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
-import StudentLogin from './pages/StudentLogin';
-import StudentRegister from './pages/StudentRegister';
-import AdminLogin from './pages/AdminLogin';
-import StudentDashboard from './pages/StudentDashboard';
-import AdminDashboard from './pages/AdminDashboard';
+﻿import React from "react"
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom"
+import { AuthProvider, useAuth } from "./context/AuthContext"
+import ProtectedRoute from "./components/ProtectedRoute"
+import StudentLogin from "./pages/StudentLogin"
+import StudentRegister from "./pages/StudentRegister"
+import AdminLogin from "./pages/AdminLogin"
+import StudentDashboard from "./pages/StudentDashboard"
+import AdminDashboard from "./pages/AdminDashboard"
 
 const AppRoutes = () => {
-  const { user } = useAuth();
+  const { user } = useAuth()
 
   return (
     <Routes>
       <Route 
         path="/" 
-        element={<Navigate to={user ? (user.role === 'admin' ? '/admin/dashboard' : '/dashboard') : '/login'} replace />} 
+        element={<Navigate to={user ? (user?.role === "admin" ? "/admin/dashboard" : "/dashboard") : "/login"} replace />} 
       />
       <Route path="/login" element={<StudentLogin />} />
       <Route path="/register" element={<StudentRegister />} />
@@ -39,8 +39,8 @@ const AppRoutes = () => {
         } 
       />
     </Routes>
-  );
-};
+  )
+}
 
 function App() {
   return (
@@ -49,7 +49,7 @@ function App() {
         <AppRoutes />
       </AuthProvider>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
