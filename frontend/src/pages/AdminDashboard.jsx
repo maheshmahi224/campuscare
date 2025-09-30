@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { useAuth } from "../context/AuthContext"
 import { complaintAPI, eventAPI } from "../services/api"
 
@@ -101,7 +101,7 @@ const AdminDashboard = () => {
       {/* Sidebar */}
       <div className="w-64 bg-white shadow-lg">
         <div className="p-6 border-b">
-          <h1 className="text-xl font-bold text-gray-800">Campus Care</h1>
+          <h1 className="text-xl font-bold text-gray-800">Scient Campus Care</h1>
           <p className="text-sm text-gray-600">Admin Panel</p>
         </div>
         <nav className="p-4">

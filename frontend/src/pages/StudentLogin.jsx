@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react"
+import React, { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
 import { authAPI } from "../services/api"
@@ -42,7 +42,7 @@ const StudentLogin = () => {
       <div className="max-w-md w-full">
         <div className="bg-white rounded-2xl shadow-xl p-8 glassmorphism">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">Campus Care</h1>
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">Scient Campus Care</h1>
             <p className="text-gray-600">Student Login</p>
           </div>
 
