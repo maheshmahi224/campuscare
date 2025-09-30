@@ -35,27 +35,33 @@ const StudentLogin = () => {
     } catch (error) {
       setError(error.response?.data?.message || "Login failed")
     } finally {
-      setLoading(false)
     }
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col">
       <div className="flex-1 flex items-center justify-center p-4">
-      <div className="max-w-md w-full">
-        <div className="bg-white rounded-2xl shadow-xl p-8 glassmorphism">
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">Scient Campus Care</h1>
-            <p className="text-gray-600">Student Login</p>
-          </div>
-
-          {error && (
-            <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg mb-6">
-              {error}
+        <div className="max-w-md w-full">
+          <div className="bg-white rounded-2xl shadow-xl p-8 glassmorphism">
+            <div className="text-center mb-8">
+              <div className="flex justify-center mb-4">
+                <img
+                  src="/logo.png"
+                  alt="Scient Campus Care Logo"
+                  className="h-16 w-16 object-contain"
+                />
+              </div>
+              <h1 className="text-3xl font-bold text-gray-800 mb-2">Scient Campus Care</h1>
+              <p className="text-gray-600">Student Login</p>
             </div>
-          )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+            {error && (
+              <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg mb-6">
+                {error}
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Roll Number
