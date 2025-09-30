@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useAuth } from "../context/AuthContext"
 import { complaintAPI, eventAPI } from "../services/api"
+import Footer from "../components/Footer"
 
 const AdminDashboard = () => {
   const { user, logout } = useAuth()
@@ -97,7 +98,8 @@ const AdminDashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
+      <div className="flex flex-1">
       {/* Sidebar */}
       <div className="w-64 bg-white shadow-lg">
         <div className="p-6 border-b">
@@ -407,6 +409,8 @@ const AdminDashboard = () => {
           )}
         </div>
       </div>
+      </div>
+      <Footer />
     </div>
   )
 }

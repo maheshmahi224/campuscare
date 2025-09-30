@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useAuth } from "../context/AuthContext"
 import { complaintAPI, eventAPI } from "../services/api"
+import Footer from "../components/Footer"
 
 const StudentDashboard = () => {
   const { user, logout } = useAuth()
@@ -64,7 +65,7 @@ const StudentDashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -309,8 +310,9 @@ const StudentDashboard = () => {
               </div>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      </main>
+      <Footer />
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
 import { authAPI } from "../services/api"
+import Footer from "../components/Footer"
 
 const AdminLogin = () => {
   const [formData, setFormData] = useState({
@@ -38,7 +39,8 @@ const AdminLogin = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-100 flex flex-col">
+      <div className="flex-1 flex items-center justify-center p-4">
       <div className="max-w-md w-full">
         <div className="bg-white rounded-2xl shadow-xl p-8 glassmorphism">
           <div className="text-center mb-8">
@@ -101,6 +103,8 @@ const AdminLogin = () => {
           </div>
         </div>
       </div>
+      </div>
+      <Footer />
     </div>
   )
 }
